@@ -15,6 +15,12 @@ header {
     text-align: center;
     width: 100%;
 }
+.navbar .container-fluid{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around !important;
+}
 
 /*estilos modal*/
 
@@ -141,6 +147,32 @@ input[name="poseeLicencia"][value="0"]:checked + label::after {
     content: " No se mostrarán tipos de licencia";
     color: gray;
     font-size: 12px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="exit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #21364ca5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px; /* Espacio entre botones */
 }
 footer {
     background-color: #333;

@@ -1,15 +1,43 @@
-header {
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-    width: 100%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Moderustic&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    font-family: "Moderustic", sans-serif;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar .container-fluid{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around !important;
+}
+
+/*estilos modal*/
+
+.modal-titulo{
+    font-family: "Moderustic", sans-serif;
+}
+
+.text-end{
+    display: flex;
+}
+
+.form-label {
+    display: flex !important;
+    color: black !important;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-family: "Moderustic", sans-serif;
 }
 
 .container{
@@ -20,6 +48,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
+
 h2 {
     text-align: center;
     color: #333;
