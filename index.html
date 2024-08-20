@@ -40,7 +40,7 @@
                                         <div class="mb-3 text-end">
                                             <a href="#" class="link-primary">¿Olvidaste tu contraseña?</a>
                                         </div>
-                                        <button type="button" class="btn btn-primary" style="width: 100%;">Ingresar</button>
+                                        <button type="button" class="btn btn-primary" id="ingresarBtn" style="width: 100%;">Ingresar</button>
                                     </form>
                                 </div>
                                 <div class="modal-footer" style="justify-content: center !important;">
@@ -132,6 +132,14 @@
         window.location.href = './Frontend/login-empresa/login-empresa.html';
     });
 });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('ingresarBtn').addEventListener('click', function () {
+            // Redirige a la página de Puesto de trabajo
+            window.location.href = './Frontend/Puesto-trabajo/oferta_trabajo.html'; // Asegúrate de que la ruta sea correcta
+        });
+    });
+
 
     </script>
 </body>
