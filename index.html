@@ -12,13 +12,46 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand"><img src="./Frontend/landing/img/logo.png" alt="" style="width: 11.5rem;"></a>
-                    <div class="form-group"></div>
-                    <div class="button-container">
-                        <button type="button" class="btn btn-outline-light" onclick="window.location.href='./frontend/login-candidato/login-candidato.html'">Ingresar Candidato</button>
-                        <button type="button" onclick="window.location.href='./Frontend/login-empresa/login-empresa.html'"  class="btn btn-outline-light">Ingreso Empresas</button>
+                <form class="d-flex" role="search">
+                    <!--modal--iniciar sesión--candidato-->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-light" style="margin-right: 1.3em;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Ingresar Candidato
+                    </button>
+                    <button type="button" onclick="window.location.href='./Frontend/login-empresa/login-empresa.html'"  class="btn btn-outline-light">Ingreso Empresas</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-titulo fs-5" id="exampleModalLabel" style="color: black; font-weight: bold;">Iniciar Sesión Candidato</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Correo Electrónico</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña">
+                                        </div>
+                                        <div class="mb-3 text-end">
+                                            <a href="#" class="link-primary">¿Olvidaste tu contraseña?</a>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" style="width: 100%;">Ingresar</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer" style="justify-content: center !important;">
+                                    <p style="color: black;">¿No tienes Cuenta?</p>
+                                    <a href="#">Regístrate</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-            
+                <!--<button class="btn btn-outline-light" style="margin-right: 1.3em;" type="submit">Ingresar Candidato</button>-->
+            </form>
         </nav>
     </header>
 
