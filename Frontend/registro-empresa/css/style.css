@@ -15,6 +15,12 @@ header {
     text-align: center;
     width: 100%;
 }
+.navbar .container-fluid{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around !important;
+}
 
 /*estilos modal*/
 

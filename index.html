@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolsa de Empleos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Frontend/landing/style/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand"><img src="./Frontend/landing/img/logo.png" alt="" style="width: 11.5rem;"></a>
+                <form class="d-flex" role="search">
+                    <!-- Button trigger modal candidato -->
+                    <button type="button" class="btn btn-outline-light" style="margin-right: 1.3em;" data-bs-toggle="modal" data-bs-target="#candidateModal">
+                        Ingresar Candidato
+                    </button>
+                    <!-- Button trigger modal empresa -->
+                    <button type="button" class="btn btn-outline-light" style="margin-right: 1.3em;" data-bs-toggle="modal" data-bs-target="#companyModal">
+                        Ingreso Empresas
+                    </button>
+            
+                    <!-- ModalCandidate -->
+                    <div class="modal fade" id="candidateModal" tabindex="-1" aria-labelledby="candidateModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="candidateModalLabel" style="color: black; font-weight: bold;">Iniciar Sesión Candidato</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="candidateEmail" class="form-label">Correo Electrónico</label>
+                                            <input type="email" class="form-control" id="candidateEmail" placeholder="Ingresa tu correo">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="candidatePassword" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control" id="candidatePassword" placeholder="Ingresa tu contraseña">
+                                        </div>
+                                        <div class="mb-3 text-end">
+                                            <a href="#" class="link-primary">¿Olvidaste tu contraseña?</a>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" style="width: 100%;">Ingresar</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer" style="justify-content: center !important;">
+                                    <p style="color: black;">¿No tienes Cuenta?</p>
+                                    <a href="./Frontend/Registro-Candidato/Registro_Persona.html">Regístrate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- ModalCompany -->
+                    <div class="modal fade" id="companyModal" tabindex="-1" aria-labelledby="companyModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="companyModalLabel" style="color: black; font-weight: bold;">Iniciar Sesión Empresa</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="companyEmail" class="form-label">Correo Electrónico</label>
+                                            <input type="email" class="form-control" id="companyEmail" placeholder="Ingresa tu correo">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="companyPassword" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control" id="companyPassword" placeholder="Ingresa tu contraseña">
+                                        </div>
+                                        <div class="mb-3 text-end">
+                                            <a href="#" class="link-primary">¿Olvidaste tu contraseña?</a>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" style="width: 100%;">Ingresar</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer" style="justify-content: center !important;">
+                                    <p style="color: black;">¿No tienes Cuenta?</p>
+                                    <a href="./Frontend/registro-empresa/registrar_empresa.html">Regístrate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </nav>
+    </header>
+
+    <section class="job-listings">
+        <div id="jobs-container">
+            <!-- Las ofertas de empleo se mostrarán aquí -->
+        </div>
+    </section>
+
+    <div>
+        <div class="box_title_content box_video">
+            <div class="box_home">
+                <video autoplay="" loop="" muted="" class="home_video">
+                    <source src="./Frontend/landing/img/210131_People Jobs Professions Success_By_Erwin_De_Boer_Artlist_HD.mp4" type="video/mp4">
+                </video>
+                <div class="container">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="title">¡Ahora es el momento de cambiar!</h2>
+                <h3 class="slogan mt10 mbB">Encuentra el empleo que encaja contigo, más de <span class="fwB">2,993</span> ofertas</h3>
+        </div>
+
+        <div class="container">
+            <div class="search-container">
+                <!-- Cuadro de búsqueda de empleos por Puesto y lugar -->
+                <div class="input-group-horizontal">
+                    <div class="field_input_icon posRel input_focus">
+                        <form autocomplete="off" class="cont">
+                            <span class="icon i_find"></span>
+                            <input id="prof-cat-search-input-holder" type="hidden" value="0">
+                            <input id="prof-cat-search-input" type="search" placeholder="Puesto" autocomplete="off">
+                            <span id="prof-cat-clean-button" onclick="" class="btn_click hide">
+                                <span class="icon i_close"></span>
+                            </span>
+                        </form>
+                    </div>
+                    <div class="field_input_icon posRel input_focus">
+                        <form autocomplete="off" class="cont">
+                            <span class="icon i_address"></span>
+                            <input id="place-search-input-holder" type="hidden" value="0">
+                            <input id="place-search-input" type="search" placeholder="Lugar" autocomplete="off">
+                            <span id="place-clean-button" onclick="" class="btn_click hide">
+                                <span class="icon i_close"></span>
+                            </span>
+                        </form>
+                    </div>
+                    <!-- Botón de búsqueda de empleos -->
+                    <button id="search-button" class="search-button b_primary rounded">
+                        <span class="icon i_search"></span>
+                        <span>Buscar empleos</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+                            
+        <!--No Tocar-->
+    </div>
+
+    <footer>
+        <p>© 2024 Bolsa de Empleos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/controls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

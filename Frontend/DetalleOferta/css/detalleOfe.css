@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic&display=swap');
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.job-details {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.job-details h2 {
+    margin-top: 0;
+}
+.job-details p {
+    margin: 10px 0;
+}
+.apply-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.apply-button:hover {
+    background: #15a4c7;
+}
+
+.right-side-sidebar {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/*    */
+.left-side-sidebar, .right-side-sidebar {
+    padding: 20px;
+}
+.left-side-sidebar {
+    flex: 3;
+}
+.right-side-sidebar {
+    flex: 1;
+    margin-left: 20px;
+}
+.xblog-medium-item {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.xblog-medium-item img {
+    max-width: 100%;
+}
+.xblog-medium-info h3 {
+    color: #007bff;
+}
+.xblog-medium-info ul {
+    list-style: none;
+    padding: 0;
+}
+.xblog-medium-info ul li {
+    margin-bottom: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+.btn-facebook {
+background: #4c68a9;
+}
+.btn-linkedin {
+ background: #0075b5;
+ }
+  .btn-twitter {
+  background: #59a8ed;
+}
+.btn-apply {
+  background: #a72828;
+}
+.btn:hover {
+opacity: 0.9;
+}
+.text-primary {
+            color: #007bff;
+}
+        .text-uppercase {
+            text-transform: uppercase;
+}
+.text-justify {
+            text-align: justify;
+}
+
+.heading {
+margin-bottom: 10px;}
+        
+.heading h4 {
+margin: 0;
+}
+        
+
+/*  */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
