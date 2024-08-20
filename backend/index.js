@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise');
 const conexion = require('./app');
 const cors = require('cors');
 const bodyParser= require('body-parser');
-const puerto=3100;
+const puerto= process.env.PORT || 3100;
 
 const usuariosRouter = require('./routers/usuarios.router');
 
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(puerto, () => {
-	console.log(`Servidor Levantado en https://localhost:${puerto}`);
+	console.log(`Servidor Levantado en https://0.0.0.0:${puerto}`);
 });
 
 app.use('/usuarios', usuariosRouter);
@@ -56,6 +56,6 @@ async function conector(){
     
 }
 
-// conector();
+conector();
 
 exports.conector = conector;

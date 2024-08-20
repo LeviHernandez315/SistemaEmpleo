@@ -8,10 +8,10 @@
 // });
 
 const conexion = {
-    host: 'localhost',
-    database: 'pruebaempleos',
-    user: 'root',
-    password: 'mysql'
+    host: 'agencia-empleos.cdvfxxw47zcz.us-east-1.rds.amazonaws.com',
+    database: 'agencia-empleos',
+    user: 'admin',
+    password: 'admin_123'
 }
 
 module.exports=conexion;

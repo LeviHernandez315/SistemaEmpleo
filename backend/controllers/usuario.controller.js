@@ -2,15 +2,17 @@ var getConection = require('../index');
 
 const obtenerUsuarios = async (req, res) =>{
     try {
+        const correo = req.body.Correo;
+        console.log(correo);
         const connection = await getConection.conector();
-        const [rows,fields] = await connection.execute('select * from Usuario');
+        const [rows,fields] = await connection.execute('select * from Usuario where Correo = ?', [correo]);
         console.log(rows);
         res.status(200).json(rows);
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Error en el servidor' });
 
-        
+
     }
     
     
