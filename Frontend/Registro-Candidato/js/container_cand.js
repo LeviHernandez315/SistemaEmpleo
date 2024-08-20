@@ -137,3 +137,4 @@ let experienciaCount = 0;
 function goBack() {
     window.history.back();
 }
+  
