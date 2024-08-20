@@ -135,6 +135,5 @@ let experienciaCount = 0;
 
 //botones registrar y cancelar
 function goBack() {
-    window.history.back();
+    window.location.href = "/";
 }
-  
