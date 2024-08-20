@@ -3,9 +3,10 @@ var getConection = require('../index');
 const obtenerUsuarios = async (req, res) =>{
     try {
         const correo = req.body.Correo;
+        const contraseña = req.body.contraseña;
         console.log(correo);
         const connection = await getConection.conector();
-        const [rows,fields] = await connection.execute('select * from Usuario where Correo = ?', [correo]);
+        const [rows,fields] = await connection.execute('select * from Usuario where Correo = ? and contraseña = ?', [correo, contraseña]);
         console.log(rows);
         res.status(200).json(rows);
     } catch (err) {
