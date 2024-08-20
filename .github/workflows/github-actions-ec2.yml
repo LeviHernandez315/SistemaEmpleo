@@ -38,7 +38,7 @@ jobs:
             cd /var/www/html
             sudo rm -rf *
             
-            cd home
+            cd /home/ubuntu
             sudo mv * /var/www/html
             # Navegar al directorio del proyecto
             cd /var/www/html
