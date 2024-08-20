@@ -1,6 +1,9 @@
 /* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Moderustic&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Moderustic", sans-serif;
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
@@ -9,23 +12,23 @@ body {
     align-items: center;
 }
 
+main {
+    flex: 1;
+}
+
 header {
     background-color: #007bff;
     color: #fff;
     text-align: center;
-    padding: 40px 20px;
     width: 100%;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    font-size: 1.2em;
-    margin-top: 10px;
-}
+/*.navbar .container-fluid{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+}*/
 
 .job-listings {
     width: 80%;
@@ -76,6 +79,7 @@ footer {
     text-align: center;
     padding: 10px;
     width: 100%;
+    margin-top: 95px; /* Esto asegura que el footer se empuje al final */
 }
 
 footer p {

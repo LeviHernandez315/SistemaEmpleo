@@ -80,6 +80,7 @@ button[type="exit"] {
     display: flex;
     justify-content: flex-end;
     gap: 15px; /* Espacio entre botones */
+    
 }button[type="submit"] {
     width: 100%;
     padding: 10px;
