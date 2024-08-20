@@ -12,81 +12,12 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand"><img src="./Frontend/landing/img/logo.png" alt="" style="width: 11.5rem;"></a>
-                <form class="d-flex" role="search">
-                    <!-- Button trigger modal candidato -->
-                    <button type="button" class="btn btn-outline-light" style="margin-right: 1.3em;" data-bs-toggle="modal" data-bs-target="#candidateModal">
-                        Ingresar Candidato
-                    </button>
-                    <!-- Button trigger modal empresa -->
-                    <button type="button" class="btn btn-outline-light" style="margin-right: 1.3em;" data-bs-toggle="modal" data-bs-target="#companyModal">
-                        Ingreso Empresas
-                    </button>
-            
-                    <!-- ModalCandidate -->
-                    <div class="modal fade" id="candidateModal" tabindex="-1" aria-labelledby="candidateModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="candidateModalLabel" style="color: black; font-weight: bold;">Iniciar Sesión Candidato</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="candidateEmail" class="form-label">Correo Electrónico</label>
-                                            <input type="email" class="form-control" id="candidateEmail" placeholder="Ingresa tu correo">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="candidatePassword" class="form-label">Contraseña</label>
-                                            <input type="password" class="form-control" id="candidatePassword" placeholder="Ingresa tu contraseña">
-                                        </div>
-                                        <div class="mb-3 text-end">
-                                            <a href="#" class="link-primary">¿Olvidaste tu contraseña?</a>
-                                        </div>
-                                        <button type="button" class="btn btn-primary" style="width: 100%;">Ingresar</button>
-                                    </form>
-                                </div>
-                                <div class="modal-footer" style="justify-content: center !important;">
-                                    <p style="color: black;">¿No tienes Cuenta?</p>
-                                    <a href="./Frontend/Registro-Candidato/Registro_Persona.html">Regístrate</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="form-group"></div>
+                    <div class="button-container">
+                        <button type="button" class="btn btn-outline-light" onclick="window.location.href='./Frontend/login-candidato/login-candidato.html'">Ingresar Candidato</button>
+                        <button type="button" onclick="window.location.href='./Frontend/login-empresa/login-empresa.html'"  class="btn btn-outline-light">Ingreso Empresas</button>
                     </div>
-            
-                    <!-- ModalCompany -->
-                    <div class="modal fade" id="companyModal" tabindex="-1" aria-labelledby="companyModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="companyModalLabel" style="color: black; font-weight: bold;">Iniciar Sesión Empresa</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="companyEmail" class="form-label">Correo Electrónico</label>
-                                            <input type="email" class="form-control" id="companyEmail" placeholder="Ingresa tu correo">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="companyPassword" class="form-label">Contraseña</label>
-                                            <input type="password" class="form-control" id="companyPassword" placeholder="Ingresa tu contraseña">
-                                        </div>
-                                        <div class="mb-3 text-end">
-                                            <a href="#" class="link-primary">¿Olvidaste tu contraseña?</a>
-                                        </div>
-                                        <button type="button" class="btn btn-primary" style="width: 100%;">Ingresar</button>
-                                    </form>
-                                </div>
-                                <div class="modal-footer" style="justify-content: center !important;">
-                                    <p style="color: black;">¿No tienes Cuenta?</p>
-                                    <a href="./Frontend/registro-empresa/registrar_empresa.html">Regístrate</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </form>
-            </div>
             
         </nav>
     </header>
@@ -156,5 +87,19 @@
 
     <script src="js/controls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    ;<script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Botón "Ingresar Candidato"
+    document.querySelector('.btn-ingresar-candidato').addEventListener('click', function () {
+        window.location.href = './Frontend/login-candidato/login-candidato.html';
+    });
+
+    // Botón "Ingreso Empresas"
+    document.querySelector('.btn-ingreso-empresas').addEventListener('click', function () {
+        window.location.href = './Frontend/login-empresa/login-empresa.html';
+    });
+});
+
+    </script>
 </body>
 </html>
