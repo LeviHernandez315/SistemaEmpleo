@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 const conexion = require('./app');
 const cors = require('cors');
 const bodyParser= require('body-parser');
@@ -28,7 +28,7 @@ app.use('/usuarios', usuariosRouter);
 
 async function conector(){
     try{
-        const pool = await mysql.connect(conexion);
+        const pool = await mysql.createConnection(conexion);
             // function(error){
             // if(error){
             //     console.log('conexion fallida');
@@ -36,7 +36,18 @@ async function conector(){
             // }else{
             //     console.log('conexion exitosa');
             // }
-        console.log('conexion exitosa');
+        // const result = pool.execute('select * from Usuario');
+        // console.log('conexion exitosa');
+        // console.log(result);
+         // Ejecuta la consulta
+        // const [rows, fields] = await pool.execute('select * from Usuario');
+
+    // Muestra los resultados en la consola y envíalos en la respuesta
+        // console.log(rows);
+        // res.json(rows);
+
+    // Cierra la conexión
+        // await pool.end();
         // });
         return pool;
     }catch (error) {
@@ -45,6 +56,6 @@ async function conector(){
     
 }
 
-conector();
+// conector();
 
 exports.conector = conector;

@@ -2,7 +2,9 @@ var getConection = require('../index');
 
 const obtenerUsuarios = async (req, res) =>{
     try {
-        const [rows] = await getConection.execute('SELECT * FROM usuario');
+        const connection = await getConection.conector();
+        const [rows,fields] = await connection.execute('select * from Usuario');
+        console.log(rows);
         res.status(200).json(rows);
     } catch (err) {
         console.error(err);
