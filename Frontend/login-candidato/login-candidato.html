@@ -35,7 +35,7 @@
                 <div class="container-buttom">
                     <div class="form-group"></div>
                     <div class="button-container">
-                        <button type="exit" class="btn btn-secondary">Cancelar</button>
+                        <button type="exit" class="btn btn-secondary" onclick="goBack()">Cancelar</button>
                         <button type="submit" class="btn btn-primary" id="ingresarBtn">Ingresar</button>
                     </div>
                 </div>
@@ -44,11 +44,6 @@
                 <p>¿No tienes una cuenta? <a href="../Registro-Candidato/Registro_Persona.html">Regístrate</a></p>
             </div>
 
-            <script>
-                    function goBack() {
-                     window.location.href = "/SistemaEmpleo";
-                    }
-            </script>
         </div>
         <footer>
             <p>© 2024 Bolsa de Empleos. Todos los derechos reservados.</p>
@@ -56,10 +51,17 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 
+    <script src="./js/controlador.js"></script>
+
     <script>   document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('ingresarBtn').addEventListener('click', function () {
             // Redirige a la página de Puesto de trabajo
             window.location.href = '../Puesto-trabajo/oferta_trabajo.html'; // Asegúrate de que la ruta sea correcta
         });
-    });</script>
+    });
+    
+    function goBack() {
+            window.location.href = "/SistemaEmpleo/index.html";
+        }
+    </script>
 </html>
