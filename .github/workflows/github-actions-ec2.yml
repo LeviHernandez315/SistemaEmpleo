@@ -34,7 +34,11 @@ jobs:
             sudo apt-get install -y apache2
             sudo systemctl start apache2
             sudo systemctl enable apache2
-            cd home
+            
+            cd /var/www/html
+            sudo rm -rf *
+            
+            cd /home/ubuntu
             sudo mv * /var/www/html
             # Navegar al directorio del proyecto
             cd /var/www/html
