@@ -132,3 +132,8 @@ let experienciaCount = 0;
             // Agregar la nueva experiencia al contenedor
             contenedor.appendChild(nuevaExperiencia);
         }
+
+//botones registrar y cancelar
+function goBack() {
+    window.history.back();
+}

@@ -88,7 +88,7 @@
                         <div class="container">
                             <div class="form-group"></div>
                             <div class="button-container">
-                                <button type="exit" class="btn btn-secondary">Cancelar</button>
+                                <button type="exit" class="btn btn-secondary" onclick="goBack()">Cancelar</button>
                                 <button type="submit" class="btn btn-primary">Registrarse</button>
                             </div>
                             </div>
@@ -103,7 +103,15 @@
         <p>© 2024 Bolsa de Empleos. Todos los derechos reservados.</p>
     </footer>
 
+
     <script src="js/controls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        //botones registrar y cancelar
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
