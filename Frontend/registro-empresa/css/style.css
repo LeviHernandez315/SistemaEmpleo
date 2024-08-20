@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+/*estilos modal*/
+
+.modal-titulo{
+    font-family: "Moderustic", sans-serif;
+}
+
+.text-end{
+    display: flex;
+}
+
+.form-label {
+    display: flex !important;
+    color: black !important;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-family: "Moderustic", sans-serif;
+}
+
+.caja-registro{
+    margin-top: 2rem;
+}
+
+.card-header{
+    font-family: "Moderustic", sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+.form-group {
+    margin-bottom: -2px;
+}
+.form-group label {
+    font-weight: bold;
+}
+.form-group-inline {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.form-group-inline .form-group {
+    flex: 1;
+}
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    width: calc(100% - 10px); /* Ajuste para el padding */
+}
+
+div {
+    margin-bottom: 7px;
+}
+
+div[style*="display: flex;"] > div {
+    flex: 1;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 50px;
+}
+
+
+  /* Estilo clearfix */
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+  /* Estilo cuando se selecciona "Sí" para mostrar los checkboxes */
+input[name="poseeLicencia"][value="1"]:checked ~ #tiposDeLicencia {
+    display: block;
+}
+
+  /* Estilo before para los iconos */
+input[name="poseeLicencia"][value="1"]:checked + label::before {
+    content: "✔ ";
+    color: green;
+    font-weight: bold;
+}
+
+input[name="poseeLicencia"][value="0"]:checked + label::before {
+    content: "✘ ";
+    color: red;
+    font-weight: bold;
+}
+
+  /* Estilo after para el mensaje adicional */
+input[name="poseeLicencia"][value="0"]:checked + label::after {
+    content: " No se mostrarán tipos de licencia";
+    color: gray;
+    font-size: 12px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
