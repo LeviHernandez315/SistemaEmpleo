@@ -36,11 +36,3 @@ jobs:
             sudo systemctl enable apache2
             cd home
             sudo mv * /var/www/html
-            # Navegar al directorio del proyecto
-            cd /var/www/html
-            
-            # Actualizar dependencias
-            npm install
-            
-            # Reiniciar la aplicación con PM2
-            pm2 restart mi-app || pm2 start index.js --name "mi-app"

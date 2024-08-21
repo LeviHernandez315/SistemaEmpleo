@@ -35,7 +35,7 @@
                 <div class="container-buttom">
                     <div class="form-group"></div>
                     <div class="button-container">
-                        <button type="exit" class="btn btn-secondary">Cancelar</button>
+                        <button type="exit" class="btn btn-secondary" onclick="goBack()">Cancelar</button>
                         <button type="submit" class="btn btn-primary">Ingresar</button>
                     </div>
                 </div>
@@ -44,6 +44,13 @@
                 <p>¿No tienes una cuenta? <a href="../registro-empresa/registrar_empresa.html">Regístrate</a></p>
             </div>
         </div>
+
+
+        <script>
+            function goBack() {
+           window.location.href = "/SistemaEmpleo";
+        }
+        </script>
         <footer>
             <p>© 2024 Bolsa de Empleos. Todos los derechos reservados.</p>
         </footer>
