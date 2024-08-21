@@ -38,6 +38,7 @@ async function conector(){
             // }
         // const result = pool.execute('select * from Usuario');
         console.log('conexion exitosa');
+        console.log('yeah, funciono');
         // console.log(result);
          // Ejecuta la consulta
         // const [rows, fields] = await pool.execute('select * from Usuario');
