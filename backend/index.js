@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
-    res.send('Probando backend de pruebaempleos');
+    res.send('Probando backend de pruebaempleos: Funciono');
 });
 
 app.listen(puerto, () => {
