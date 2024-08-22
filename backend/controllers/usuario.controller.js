@@ -8,6 +8,7 @@ const obtenerUsuarios = async (req, res) =>{
         const connection = await getConection.conector();
         const [rows,fields] = await connection.execute('select * from Usuario where Correo = ? and contraseña = ?', [correo, contraseña]);
         console.log(rows);
+        console.log(rows.length)
 
         if (rows.length > 0) {
             res.status(200).json({ message: 'Login successful' });
