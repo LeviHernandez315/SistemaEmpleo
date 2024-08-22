@@ -1,18 +1,18 @@
 // var mysql = require('mysql2');
 
-var conexion = {
-    host: 'localhost',
-    database: 'pruebaempleos',
-    user: 'root',
-    password: 'mysql',
-};
+// var conexion = {
+//     host: 'localhost',
+//     database: 'pruebaempleos',
+//     user: 'root',
+//     password: 'mysql',
+// };
 
-// const conexion = {
-//     host: 'agencia-empleos.cdvfxxw47zcz.us-east-1.rds.amazonaws.com',
-//     database: 'agencia-empleos',
-//     user: 'admin',
-//     password: 'admin_123'
-// }
+const conexion = {
+    host: 'agencia-empleos.cdvfxxw47zcz.us-east-1.rds.amazonaws.com',
+    database: 'agencia-empleos',
+    user: 'admin',
+    password: 'admin_123'
+}
 
 module.exports=conexion;
 
