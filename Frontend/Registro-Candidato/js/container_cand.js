@@ -197,7 +197,7 @@ document.getElementById('registrarPersona').addEventListener('click', async (e) 
     
     // http://localhost:3100/usuarios - direccion en local
     try {
-        const response = await fetch('http://localhost:3100/registrar/persona', { // Cambia esto si el backend está en otro puerto o dominio
+        const response = await fetch('http://3.229.110.179:3100/registrar/persona', { // Cambia esto si el backend está en otro puerto o dominio
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -214,7 +214,8 @@ document.getElementById('registrarPersona').addEventListener('click', async (e) 
 
         if (response.ok) {
             // document.getElementById('message').textContent = data.message;
-            alert('persona exitoso, URRRAAAAA');
+            // alert('persona exitoso, URRRAAAAA');
+            console.log('usuario exitoso, URRRAAAAA');
             // console.log(data.id_usuario);
             // localStorage.setItem('UsuarioId', data.id_usuario);
             // window.location.href="../Puesto-trabajo/oferta_trabajo.html"
@@ -228,7 +229,7 @@ document.getElementById('registrarPersona').addEventListener('click', async (e) 
 
     // para el usuario
     try {
-        const response = await fetch('http://localhost:3100/registrar/usuario', { // Cambia esto si el backend está en otro puerto o dominio
+        const response = await fetch('http://3.229.110.179:3100/registrar/usuario', { // Cambia esto si el backend está en otro puerto o dominio
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -258,7 +259,7 @@ document.getElementById('registrarPersona').addEventListener('click', async (e) 
 
     //para el aspirante
     try {
-        const response = await fetch('http://localhost:3100/registrar/aspirante', { // Cambia esto si el backend está en otro puerto o dominio
+        const response = await fetch('http://3.229.110.179:3100/registrar/aspirante', { // Cambia esto si el backend está en otro puerto o dominio
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -279,6 +280,7 @@ document.getElementById('registrarPersona').addEventListener('click', async (e) 
             // document.getElementById('message').textContent = data.message;
             // alert('Login exitoso, URRRAAAAA');
             console.log('aspirante exitoso, URRRAAAAA');
+            window.location.href="../login-candidato/login-candidato.html"
             // localStorage.setItem('UsuarioId', data.id_usuario);
             // window.location.href="../Puesto-trabajo/oferta_trabajo.html"
         } else {

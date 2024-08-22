@@ -16,7 +16,7 @@
         
         // http://localhost:3100/usuarios - direccion en local
         try {
-            const response = await fetch('http://localhost:3100/usuarios', { // Cambia esto si el backend está en otro puerto o dominio
+            const response = await fetch('http://3.229.110.179:3100/usuarios', { // Cambia esto si el backend está en otro puerto o dominio
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
