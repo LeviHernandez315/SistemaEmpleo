@@ -1,44 +1,4 @@
 
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     document.getElementById('ingresarBtn').addEventListener('click', async function () {
-    //         // Evita que el formulario se envíe de la manera tradicional
-    //         event.preventDefault();
-
-    //         // Captura los datos del formulario
-    //         const email = document.getElementById('email').value;
-    //         const password = document.getElementById('password').value;
-
-    //         try {
-    //             // Realiza la solicitud fetch al backend
-    //             const response = await fetch('http://localhost:3100/usuarios', { // Cambia esta URL a la de tu backend
-    //                 method: 'POST',
-    //                 headers: {
-    //                     'Content-Type': 'application/json'
-    //                 },
-    //                 body: JSON.stringify({
-    //                     Correo: email,
-    //                     contraseña: password
-    //                 })
-    //             });
-
-    //             // Verifica si la respuesta es correcta
-    //             if (response.ok) {
-    //                 const data = await response.json();
-    //                 console.log('Login exitoso:', data);
-    //                 // Redirige al usuario a la página de "Puesto de trabajo"
-    //                 window.location.href = '../Puesto-trabajo/oferta_trabajo.html';
-    //             } else {
-    //                 // Maneja el error si el login falla
-    //                 console.error('Error en el login');
-    //                 alert('Login fallido, por favor verifica tus credenciales');
-    //             }
-    //         } catch (error) {
-    //             console.error('Error al conectarse al backend:', error);
-    //             alert('Hubo un problema al intentar iniciar sesión, por favor intenta de nuevo más tarde.');
-    //         }
-    //     });
-    // });
-
     function goBack() {
         window.location.href = "/";
     }
@@ -56,12 +16,12 @@
         
         // http://localhost:3100/usuarios - direccion en local
         try {
-            const response = await fetch('http://3.229.110.179:3100/usuarios', { // Cambia esto si el backend está en otro puerto o dominio
+            const response = await fetch('http://localhost:3100/usuarios', { // Cambia esto si el backend está en otro puerto o dominio
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ Correo:email, contraseña: password})
+                body: JSON.stringify({ Correo:email, Password: password})
             });
     
             const data = await response.json();
@@ -69,6 +29,8 @@
             if (response.ok) {
                 // document.getElementById('message').textContent = data.message;
                 // alert('Login exitoso, URRRAAAAA');
+                // console.log(data.id_usuario);
+                localStorage.setItem('UsuarioId', data.id_usuario);
                 window.location.href="../Puesto-trabajo/oferta_trabajo.html"
             } else {
                 // document.getElementById('message').textContent = data.message;

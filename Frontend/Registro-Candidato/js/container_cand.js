@@ -137,3 +137,156 @@ let experienciaCount = 0;
 function goBack() {
     window.location.href = "/";
 }
+
+
+//el fetch para registrar una persona
+document.getElementById('registrarPersona').addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const DNI = document.getElementById('dni').value;
+    const Primer_Nombre = document.getElementById('primer_nombre').value;
+    const Segundo_Nombre = document.getElementById('segundo_nombre').value;
+    const Primer_Apellido = document.getElementById('primer_apellido').value;
+    const Segundo_Apellido = document.getElementById('segundo_apellido').value;
+    const Id_Tipo_Identificacion = getTipoIdentificacion(document.getElementById('identificacion').value);
+    
+    //variable para el usuario
+    const Correo = document.getElementById('correo').value;
+    const Password = document.getElementById('contrasena').value;
+    const id_Tipo_Usuario = 1;
+
+    //variables para el aspirante
+    const Telefono = document.getElementById('Telefono').value;
+    const Id_Genero = getGenero(document.getElementById('genero').value);
+    const Id_Estado_Civil = getEstadoCivil(document.getElementById('estado_civil').value);
+
+    var variableUsuario
+    // Funciones para obtener valores
+    function getTipoIdentificacion(valor) {
+        switch(valor) {
+            case "cedula": return 1;
+            case "Pasaporte": return 2;
+            default: return null;
+        }
+    }
+
+    function getGenero(valor) {
+        switch(valor) {
+            case "masculino": return 1;
+            case "femenino": return 2;
+            case "prefiero no contestar": return 3;
+            default: return null;
+        }
+    }
+
+    function getEstadoCivil(valor) {
+        switch(valor) {
+            case "soltero":
+            case "viudo": 
+                return 1;
+            case "casado": 
+                return 2;
+            case "divorciado": 
+                return 3;
+            default: 
+                return null;
+        }
+    }
+
+    // http://3.229.110.179:3100/usuarios - direccion en la nube
+    
+    // http://localhost:3100/usuarios - direccion en local
+    try {
+        const response = await fetch('http://localhost:3100/registrar/persona', { // Cambia esto si el backend está en otro puerto o dominio
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ DNI:DNI, 
+                Primer_Nombre:Primer_Nombre,
+                Segundo_Nombre:Segundo_Nombre,
+                Primer_Apellido:Primer_Apellido,
+                Segundo_Apellido:Segundo_Apellido,
+                Id_Tipo_Identificacion:Id_Tipo_Identificacion})
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // document.getElementById('message').textContent = data.message;
+            alert('persona exitoso, URRRAAAAA');
+            // console.log(data.id_usuario);
+            // localStorage.setItem('UsuarioId', data.id_usuario);
+            // window.location.href="../Puesto-trabajo/oferta_trabajo.html"
+        } else {
+            // document.getElementById('message').textContent = data.message;
+            alert('Login fallido, por favor verifica tus credenciales');
+        }
+    } catch (err) {
+        document.getElementById('message').textContent = 'An error occurred';
+    }
+
+    // para el usuario
+    try {
+        const response = await fetch('http://localhost:3100/registrar/usuario', { // Cambia esto si el backend está en otro puerto o dominio
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ Correo: Correo, 
+                Password:Password,
+                id_Tipo_Usuario: id_Tipo_Usuario
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // document.getElementById('message').textContent = data.message;
+            // alert('Login exitoso, URRRAAAAA');
+            console.log('usuario exitoso, URRRAAAAA');
+            variableUsuario = data.id_usuario;
+            // localStorage.setItem('UsuarioId', data.id_usuario);
+            // window.location.href="../Puesto-trabajo/oferta_trabajo.html"
+        } else {
+            // document.getElementById('message').textContent = data.message;
+            alert('Login fallido, por favor verifica tus credenciales');
+        }
+    } catch (err) {
+        document.getElementById('message').textContent = 'An error occurred';
+    }
+
+    //para el aspirante
+    try {
+        const response = await fetch('http://localhost:3100/registrar/aspirante', { // Cambia esto si el backend está en otro puerto o dominio
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ DNI:DNI,
+                Telefono: Telefono, 
+                Id_Genero: Id_Genero,
+                Id_Estado_Civil: Id_Estado_Civil,
+                Id_Usuario: variableUsuario
+                // Password:Password,
+                // Correo: Correo
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // document.getElementById('message').textContent = data.message;
+            // alert('Login exitoso, URRRAAAAA');
+            console.log('aspirante exitoso, URRRAAAAA');
+            // localStorage.setItem('UsuarioId', data.id_usuario);
+            // window.location.href="../Puesto-trabajo/oferta_trabajo.html"
+        } else {
+            // document.getElementById('message').textContent = data.message;
+            alert('Login fallido, por favor verifica tus credenciales');
+        }
+    } catch (err) {
+        document.getElementById('message').textContent = 'An error occurred';
+    }
+
+});

@@ -25,6 +25,8 @@ const jobs = [
     }
 ];
 
+const Usuario = [];
+
 function renderJobs(filteredJobs) {
     const jobList = document.getElementById('job-list');
     jobList.innerHTML = ''; // Limpia la lista antes de mostrar los resultados filtrados
@@ -75,3 +77,5 @@ document.getElementById('job-filter-form').addEventListener('submit', function(e
     e.preventDefault();
     filterJobs();
 });
+
+

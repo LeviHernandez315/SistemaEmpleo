@@ -2,20 +2,16 @@ var getConection = require('../index');
 
 const obtenerUsuarios = async (req, res) =>{
     try {
-        // const {correo,
-        //     contraseña
-        // }=req.body
-        
-        const correo = req.body.Correo;
-        const contraseña = req.body.contraseña;
-        console.log(correo);
+        const correo = req.body.Correo; 
+        const Password = req.body.Password;
+        // console.log(correo);
         const connection = await getConection.conector();
-        const [rows,fields] = await connection.execute('select * from Usuario where Correo = ? and contraseña = ?', [correo, contraseña]);
+        const [rows,fields] = await connection.execute('select * from Usuario where Correo = ? and Password = ?', [correo, Password]);
         console.log(rows);
-        console.log(rows.length)
+        // console.log(rows.length)
 
         if (rows.length > 0) {
-            res.status(200).json({ message: 'Login successful' });
+            res.status(200).json({ id_usuario: rows[0].id_usuario });
         } else {
             res.status(401).json({ message: 'Invalid email or password' });
         }
@@ -27,20 +23,6 @@ const obtenerUsuarios = async (req, res) =>{
 
 
     }
-    
-    
-    // try {
-        // const { email, password } = req.body;
-        // const consulta = 'SELECT * FROM usuario where correo = aspirante1@example.com';
-        // const pool = await getConection.conector();
-        // const result= await pool.execute('SELECT * FROM usuario');
-        // console.log(result.recordset);
-        // res.json(result);
-        // res.send(result.recordset);
-        // console.log(result.recordset);
-    // } catch (error) {
-    //     res.status(500).send('Error al obtener usuarios');
-    // }
 }
 
 

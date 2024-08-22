@@ -6,6 +6,7 @@ const bodyParser= require('body-parser');
 const puerto= process.env.PORT || 3100;
 
 const usuariosRouter = require('./routers/usuarios.router');
+const aspiranteRouter = require('./routers/aspirante.router');
 
 const app = express();
 
@@ -23,33 +24,15 @@ app.listen(puerto, () => {
 });
 
 app.use('/usuarios', usuariosRouter);
+app.use('/registrar', aspiranteRouter);
 
-// const conectar = conexion.conector();
 
 async function conector(){
     try{
         const pool = await mysql.createConnection(conexion);
-            // function(error){
-            // if(error){
-            //     console.log('conexion fallida');
-            //     throw error;
-            // }else{
-            //     console.log('conexion exitosa');
-            // }
-        // const result = pool.execute('select * from Usuario');
+            
         console.log('conexion exitosa');
-        // console.log('yeah, funciono');
-        // console.log(result);
-         // Ejecuta la consulta
-        // const [rows, fields] = await pool.execute('select * from Usuario');
-
-    // Muestra los resultados en la consola y envíalos en la respuesta
-        // console.log(rows);
-        // res.json(rows);
-
-    // Cierra la conexión
-        // await pool.end();
-        // });
+        
         return pool;
     }catch (error) {
         console.log('ha habido un error');
@@ -57,6 +40,6 @@ async function conector(){
     
 }
 
-conector();
+// conector();
 
 exports.conector = conector;
