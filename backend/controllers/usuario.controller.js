@@ -2,6 +2,10 @@ var getConection = require('../index');
 
 const obtenerUsuarios = async (req, res) =>{
     try {
+        // const {correo,
+        //     contraseña
+        // }=req.body
+        
         const correo = req.body.Correo;
         const contraseña = req.body.contraseña;
         console.log(correo);

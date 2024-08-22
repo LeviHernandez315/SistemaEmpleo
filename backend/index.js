@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(puerto, () => {
-	console.log(`Servidor Levantado en https://0.0.0.0:${puerto}`);
+	console.log(`Servidor Levantado en el puerto = ${puerto}`);
 });
 
 app.use('/usuarios', usuariosRouter);
