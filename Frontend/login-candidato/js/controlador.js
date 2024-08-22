@@ -10,7 +10,7 @@
 
             try {
                 // Realiza la solicitud fetch al backend
-                const response = await fetch('http//:0.0.0.0:3100', { // Cambia esta URL a la de tu backend
+                const response = await fetch('http://3.229.110.179:3100/usuarios', { // Cambia esta URL a la de tu backend
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
