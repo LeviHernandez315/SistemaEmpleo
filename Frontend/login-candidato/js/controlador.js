@@ -40,6 +40,6 @@
     });
 
     function goBack() {
-        window.location.href = "/SistemaEmpleo/index.html";
+        window.location.href = "/";
     }
 
